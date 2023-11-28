@@ -20,9 +20,21 @@
                 value="<%= dataEdit.weight %>" required class="subForm" /><br>
             <input type="date" name="birthdate" value="<%= dataEdit.birthdate %>" required class="subForm" /><br>
             <select id="married" name="married" class="subForm">
+                <%if(dataEdit.married == true) {%>
                 <option value="">Have You Married ?</option>
-                <option value="true">true</option>
+                <option value="true" selected>true</option>
                 <option value="false">false</option>
+                <% } %>
+                <%if(dataEdit.married == false) {%>
+                    <option value="">Have You Married ?</option>
+                    <option value="true">true</option>
+                    <option value="false"selected>false</option>
+                    <% } %>
+                    <%if(dataEdit.married == null) {%>
+                        <option value=""selected>Have You Married ?</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                        <% } %>
             </select><br>
             <button class="tombol-simpan" type="submit">Save</button>
             <a href="/" class="tombol">
